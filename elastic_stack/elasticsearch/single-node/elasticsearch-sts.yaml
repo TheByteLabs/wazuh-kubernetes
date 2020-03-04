@@ -11,6 +11,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: wazuh-elasticsearch
+  namespace: default
 spec:
   replicas: 1
   selector:
