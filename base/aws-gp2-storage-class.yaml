@@ -10,7 +10,7 @@
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: gp2-encrypted-retained
+  name: do-block-storage
 provisioner: dobs.csi.digitalocean.com
 parameters:
   encrypted: 'true'

@@ -118,10 +118,10 @@ ubuntu@k8s-control-server:~$ kubectl delete ConfigMap wazuh-manager-worker-1-con
 ```
 ubuntu@k8s-control-server:~$ kubectl get persistentvolumeclaim --namespace wazuh
 NAME                                            STATUS    VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS             AGE
-wazuh-elasticsearch-wazuh-elasticsearch-0       Bound     pvc-b3226ad3-f7c4-11e8-b9b8-022ada63b4ac   30Gi       RWO            gp2-encrypted-retained   6d
-wazuh-manager-master-wazuh-manager-master-0     Bound     pvc-fb821971-f7c4-11e8-b9b8-022ada63b4ac   10Gi       RWO            gp2-encrypted-retained   6d
-wazuh-manager-worker-wazuh-manager-worker-0-0   Bound     pvc-ffe7bf66-f7c4-11e8-b9b8-022ada63b4ac   10Gi       RWO            gp2-encrypted-retained   6d
-wazuh-manager-worker-wazuh-manager-worker-1-0   Bound     pvc-024466da-f7c5-11e8-b9b8-022ada63b4ac   10Gi       RWO            gp2-encrypted-retained   6d
+wazuh-elasticsearch-wazuh-elasticsearch-0       Bound     pvc-b3226ad3-f7c4-11e8-b9b8-022ada63b4ac   30Gi       RWO            do-block-storage   6d
+wazuh-manager-master-wazuh-manager-master-0     Bound     pvc-fb821971-f7c4-11e8-b9b8-022ada63b4ac   10Gi       RWO            do-block-storage   6d
+wazuh-manager-worker-wazuh-manager-worker-0-0   Bound     pvc-ffe7bf66-f7c4-11e8-b9b8-022ada63b4ac   10Gi       RWO            do-block-storage   6d
+wazuh-manager-worker-wazuh-manager-worker-1-0   Bound     pvc-024466da-f7c5-11e8-b9b8-022ada63b4ac   10Gi       RWO            do-block-storage   6d
 ```
 
 ```
@@ -141,10 +141,10 @@ ubuntu@k8s-control-server:~$ kubectl delete persistentvolumeclaim wazuh-manager-
 ```
 ubuntu@k8s-control-server:~$ kubectl get persistentvolume
 NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS        CLAIM                                                         STORAGECLASS             REASON    AGE
-pvc-024466da-f7c5-11e8-b9b8-022ada63b4ac   10Gi       RWO            Retain           Bound         wazuh/wazuh-manager-worker-wazuh-manager-worker-1-0           gp2-encrypted-retained             6d
-pvc-b3226ad3-f7c4-11e8-b9b8-022ada63b4ac   30Gi       RWO            Retain           Bound         wazuh/wazuh-elasticsearch-wazuh-elasticsearch-0               gp2-encrypted-retained             6d
-pvc-fb821971-f7c4-11e8-b9b8-022ada63b4ac   10Gi       RWO            Retain           Bound         wazuh/wazuh-manager-master-wazuh-manager-master-0             gp2-encrypted-retained             6d
-pvc-ffe7bf66-f7c4-11e8-b9b8-022ada63b4ac   10Gi       RWO            Retain           Bound         wazuh/wazuh-manager-worker-wazuh-manager-worker-0-0           gp2-encrypted-retained             6d
+pvc-024466da-f7c5-11e8-b9b8-022ada63b4ac   10Gi       RWO            Retain           Bound         wazuh/wazuh-manager-worker-wazuh-manager-worker-1-0           do-block-storage             6d
+pvc-b3226ad3-f7c4-11e8-b9b8-022ada63b4ac   30Gi       RWO            Retain           Bound         wazuh/wazuh-elasticsearch-wazuh-elasticsearch-0               do-block-storage             6d
+pvc-fb821971-f7c4-11e8-b9b8-022ada63b4ac   10Gi       RWO            Retain           Bound         wazuh/wazuh-manager-master-wazuh-manager-master-0             do-block-storage             6d
+pvc-ffe7bf66-f7c4-11e8-b9b8-022ada63b4ac   10Gi       RWO            Retain           Bound         wazuh/wazuh-manager-worker-wazuh-manager-worker-0-0           do-block-storage             6d
 ```
 
 Master.
@@ -221,7 +221,7 @@ ubuntu@k8s-control-server:~$ kubectl delete StatefulSet wazuh-elasticsearch --na
 ```
 ubuntu@k8s-control-server:~$ kubectl get persistentvolumeclaim --namespace wazuh
 NAME                                            STATUS    VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS             AGE
-wazuh-elasticsearch-wazuh-elasticsearch-0       Bound     pvc-b3226ad3-f7c4-11e8-b9b8-022ada63b4ac   30Gi       RWO            gp2-encrypted-retained   6d
+wazuh-elasticsearch-wazuh-elasticsearch-0       Bound     pvc-b3226ad3-f7c4-11e8-b9b8-022ada63b4ac   30Gi       RWO            do-block-storage   6d
 ```
 
 ```
@@ -233,10 +233,10 @@ ubuntu@k8s-control-server:~$ kubectl delete persistentvolumeclaim wazuh-elastics
 ```
 ubuntu@k8s-control-server:~$ kubectl get persistentvolume
 NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS        CLAIM                                                         STORAGECLASS             REASON    AGE
-pvc-024466da-f7c5-11e8-b9b8-022ada63b4ac   10Gi       RWO            Retain           Released      wazuh/wazuh-manager-worker-wazuh-manager-worker-1-0           gp2-encrypted-retained             6d
-pvc-b3226ad3-f7c4-11e8-b9b8-022ada63b4ac   30Gi       RWO            Retain           Bound         wazuh/wazuh-elasticsearch-wazuh-elasticsearch-0               gp2-encrypted-retained             6d
-pvc-fb821971-f7c4-11e8-b9b8-022ada63b4ac   10Gi       RWO            Retain           Released      wazuh/wazuh-manager-master-wazuh-manager-master-0             gp2-encrypted-retained             6d
-pvc-ffe7bf66-f7c4-11e8-b9b8-022ada63b4ac   10Gi       RWO            Retain           Released      wazuh/wazuh-manager-worker-wazuh-manager-worker-0-0           gp2-encrypted-retained             6d
+pvc-024466da-f7c5-11e8-b9b8-022ada63b4ac   10Gi       RWO            Retain           Released      wazuh/wazuh-manager-worker-wazuh-manager-worker-1-0           do-block-storage             6d
+pvc-b3226ad3-f7c4-11e8-b9b8-022ada63b4ac   30Gi       RWO            Retain           Bound         wazuh/wazuh-elasticsearch-wazuh-elasticsearch-0               do-block-storage             6d
+pvc-fb821971-f7c4-11e8-b9b8-022ada63b4ac   10Gi       RWO            Retain           Released      wazuh/wazuh-manager-master-wazuh-manager-master-0             do-block-storage             6d
+pvc-ffe7bf66-f7c4-11e8-b9b8-022ada63b4ac   10Gi       RWO            Retain           Released      wazuh/wazuh-manager-worker-wazuh-manager-worker-0-0           do-block-storage             6d
 ```
 
 Master.

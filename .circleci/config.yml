@@ -20,7 +20,7 @@ jobs:
           command: ./scripts/ci-deploy.sh
 workflows:
   version: 2
-  build-watupay:
+  build-wazuh-kubernetes:
     jobs:
       - live:
           context: org-wide

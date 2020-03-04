@@ -84,7 +84,7 @@ spec:
       spec:
         accessModes:
           - ReadWriteOnce
-        storageClassName: gp2-encrypted-retained
+        storageClassName: do-block-storage
         resources:
           requests:
             storage: 30Gi
