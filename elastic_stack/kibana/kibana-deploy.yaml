@@ -7,7 +7,7 @@
 
 # Kibana Deployment
 
-apiVersion: apps/v1
+apiVersion: v1
 kind: Deployment
 metadata:
   name: wazuh-kibana

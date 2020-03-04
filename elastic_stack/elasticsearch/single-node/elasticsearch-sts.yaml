@@ -7,7 +7,7 @@
 
 # Elasticsearch StatefulSet: Single node.
 
-apiVersion: apps/v1
+apiVersion: v1
 kind: StatefulSet
 metadata:
   name: wazuh-elasticsearch
