@@ -69,7 +69,7 @@ spec:
   volumeClaimTemplates:
     - metadata:
         name: wazuh-manager-worker
-        namespace: wazuh
+        namespace: default
       spec:
         accessModes:
           - ReadWriteOnce
