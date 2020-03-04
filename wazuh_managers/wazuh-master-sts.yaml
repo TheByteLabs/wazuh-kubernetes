@@ -7,7 +7,7 @@
 
 # Wazuh master StatefulSet
 
-apiVersion: v1
+apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: wazuh-manager-master
@@ -60,7 +60,7 @@ spec:
       spec:
         accessModes:
           - ReadWriteOnce
-        storageClassName: do-block-storage
+        storageClassName: gp2-encrypted-retained
         resources:
           requests:
             storage: 50Gi
