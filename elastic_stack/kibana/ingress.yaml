@@ -17,4 +17,4 @@ spec:
           - path: /
             backend:
               serviceName: wazuh-nginx
-              servicePort: 80
+              servicePort: 443
