@@ -5,12 +5,12 @@
 # License (version 2) as published by the FSF - Free Software
 # Foundation.
 
-# Wazuh worker StatefulSet: 0
+# Wazuh worker StatefulSet: 1
 
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: wazuh-manager-worker-0
+  name: wazuh-manager-worker-1
   namespace: wazuh
 spec:
   replicas: 1
@@ -18,7 +18,7 @@ spec:
     matchLabels:
       app: wazuh-manager
       node-type: worker
-      sts-id: '0'
+      sts-id: '1'
   serviceName: wazuh-cluster
   podManagementPolicy: Parallel
   template:
@@ -26,8 +26,8 @@ spec:
       labels:
         app: wazuh-manager
         node-type: worker
-        sts-id: '0'
-      name: wazuh-manager-worker-0
+        sts-id: '1'
+      name: wazuh-manager-worker-1
     spec:
       affinity:
         podAntiAffinity:
@@ -39,12 +39,12 @@ spec:
                     - key: sts-id
                       operator: In
                       values:
-                        - '1'
+                        - '0'
                 topologyKey: kubernetes.io/hostname
       volumes:
         - name: config
           configMap:
-            name: wazuh-manager-worker-0-conf
+            name: wazuh-manager-worker-1-conf
       containers:
         - name: wazuh-manager
           image: 'wazuh/wazuh:3.11.3_7.5.2'

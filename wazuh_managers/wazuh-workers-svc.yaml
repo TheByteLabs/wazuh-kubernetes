@@ -11,9 +11,15 @@ apiVersion: v1
 kind: Service
 metadata:
   name: wazuh-workers
+  namespace: wazuh
   labels:
     app: wazuh-manager
+    # dns: route53
+  annotations:
+    #domainName: 'wazuh-manager.some-domain.com'  # TODO: Change this for a Hosted Zone you configured in AWS Route 53
+    service.beta.kubernetes.io/do-loadbalancer-hostname: "wazuh-manager.bytelabs.ng"
 spec:
+  type: LoadBalancer
   selector:
     app: wazuh-manager
     node-type: worker

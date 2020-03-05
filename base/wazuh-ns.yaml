@@ -1,3 +1,4 @@
+
 # Copyright (C) 2018 Wazuh Inc.
 #
 # This program is a free software; you can redistribute it
@@ -5,19 +6,9 @@
 # License (version 2) as published by the FSF - Free Software
 # Foundation.
 
-# Elasticsearch service: API
+# Wazuh namespace
 
 apiVersion: v1
-kind: Service
+kind: Namespace
 metadata:
-  name: elasticsearch
-  namespace: wazuh
-  labels:
-    app: wazuh-elasticsearch
-spec:
-  selector:
-    app: wazuh-elasticsearch
-  ports:
-    - name: es-rest
-      port: 9200
-      targetPort: 9200
+  name: wazuh
