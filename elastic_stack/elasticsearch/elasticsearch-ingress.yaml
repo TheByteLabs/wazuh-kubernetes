@@ -9,7 +9,7 @@ spec:
   tls:
     - hosts:
         - es.bytelabs.ng
-      secretName: wazuh-master-tls
+      secretName: wazuh-elasticsearch-tls
   rules:
     - host: es.bytelabs.ng
       http:
