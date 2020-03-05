@@ -19,8 +19,8 @@ metadata:
     # domainName: 'changeme'
     # service.beta.kubernetes.io/aws-load-balancer-ssl-cert: 'changeme'
     service.beta.kubernetes.io/do-loadbalancer-hostname: "wazuh.bytelabs.ng"
+    service.beta.kubernetes.io/do-loadbalancer-protocol: "tcp"
     service.beta.kubernetes.io/do-loadbalancer-tls-ports: "443"
-    service.beta.kubernetes.io/do-loadbalancer-protocol: "https"
 spec:
   type: LoadBalancer
   selector:

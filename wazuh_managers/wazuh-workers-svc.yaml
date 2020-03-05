@@ -18,6 +18,7 @@ metadata:
   annotations:
     #domainName: 'wazuh-manager.some-domain.com'  # TODO: Change this for a Hosted Zone you configured in AWS Route 53
     service.beta.kubernetes.io/do-loadbalancer-hostname: "wazuh-manager.bytelabs.ng"
+    service.beta.kubernetes.io/do-loadbalancer-protocol: "tcp"
 spec:
   type: LoadBalancer
   selector:
