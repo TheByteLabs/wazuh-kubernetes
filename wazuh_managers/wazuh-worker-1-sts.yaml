@@ -17,7 +17,6 @@ spec:
     matchLabels:
       app: wazuh-manager
       node-type: worker
-      sts-id: '1'
   serviceName: wazuh-cluster
   podManagementPolicy: Parallel
   template:
