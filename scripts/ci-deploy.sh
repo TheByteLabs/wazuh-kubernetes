@@ -73,11 +73,4 @@ echo "$KUBERNETES_CLUSTER_CERTIFICATE" | base64 --decode > cert.crt
   --server=$KUBERNETES_SERVER \
   --certificate-authority=cert.crt \
   --token=$KUBERNETES_TOKEN \
-  apply -f ./elastic_stack/kibana/ingress.yaml
-
-./kubectl \
-  --kubeconfig=/dev/null \
-  --server=$KUBERNETES_SERVER \
-  --certificate-authority=cert.crt \
-  --token=$KUBERNETES_TOKEN \
   apply -f ./wazuh_managers
