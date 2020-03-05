@@ -17,4 +17,4 @@ spec:
           - path: /
             backend:
               serviceName: wazuh-elasticsearch
-              servicePort: 9200
+              servicePort: 9300
