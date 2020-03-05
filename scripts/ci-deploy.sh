@@ -32,6 +32,13 @@ echo "$KUBERNETES_CLUSTER_CERTIFICATE" | base64 --decode > cert.crt
   --token=$KUBERNETES_TOKEN \
   apply -f ./elastic_stack/elasticsearch/single-node/elasticsearch-sts.yaml
 
+./kubectl \
+  --kubeconfig=/dev/null \
+  --server=$KUBERNETES_SERVER \
+  --certificate-authority=cert.crt \
+  --token=$KUBERNETES_TOKEN \
+  apply -f ./elastic_stack/elasticsearch/elasticsearch-ingress.yaml
+
 
 ./kubectl \
   --kubeconfig=/dev/null \
