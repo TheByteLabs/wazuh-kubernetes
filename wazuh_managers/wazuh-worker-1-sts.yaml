@@ -25,7 +25,6 @@ spec:
       labels:
         app: wazuh-manager
         node-type: worker
-        sts-id: '1'
       name: wazuh-manager-worker-1
     spec:
       affinity:
