@@ -21,6 +21,7 @@ metadata:
     service.beta.kubernetes.io/do-loadbalancer-hostname: "wazuh.bytelabs.ng"
     service.beta.kubernetes.io/do-loadbalancer-protocol: "tcp"
     service.beta.kubernetes.io/do-loadbalancer-tls-ports: "443"
+    service.beta.kubernetes.io/do-loadbalancer-certificate-id: "60d00a35-00e6-408f-8e7b-e500a69fc5b1"
 spec:
   type: LoadBalancer
   selector:
